@@ -1,0 +1,19 @@
+<% if flash[:alert] %>
+  <h3><%= flash[:alert] %></h3>
+<% end %>
+
+<h1>Log In</h1>
+
+<%= form_for :user, url: login_path do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <%= f.submit "Log In" %>
+<% end %>
+
+<p><%= link_to "Sign Up", signup_path %></p>
